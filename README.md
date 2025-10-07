@@ -1,83 +1,92 @@
 # temp_lcd.ino
-Este proyecto implementa un sistema de monitoreo y control de temperatura utilizando un sensor de temperatura TMP36, un display LCD 16x2, un LED rojo como indicador de alerta, y un motor DC que simula un ventilador.
+*Este proyecto implementa un sistema de monitoreo y control de temperatura utilizando un sensor de temperatura TMP36, un display LCD 16x2, un LED rojo como indicador de alerta, y un motor DC que simula un ventilador.
 El sistema mide la temperatura ambiente, la muestra en pantalla y activa el ventilador automáticamente cuando se supera un umbral establecido (por defecto 26 °C).
 
-El circuito fue diseñado y probado en Tinkercad Circuits, pero también puede montarse físicamente con componentes reales.
+*El circuito fue diseñado y probado en Tinkercad Circuits, pero también puede montarse físicamente con componentes reales.
 
-Componentes Utilizados
-U1	1	Arduino Uno R3
+*Componentes Utilizados
 
-Rpot1	1	Potenciómetro de 220 Ω
+Nombre / Cantidad / Componente
 
-R1	1	Resistencia de 1 kΩ
+U1 /	1 /	Arduino Uno R3
 
-D1	1	LED Rojo
+Rpot1 /	1 /	Potenciómetro de 220 Ω
 
-R2	1	Resistencia de 220 Ω
+R1 /	1 /	Resistencia de 1 kΩ
 
-M1	1	Motor de CC
+D1 /	1 /	LED Rojo
 
-D2	1	Diodo (1N4007 o similar)
+R2 /	1	/ Resistencia de 220 Ω
 
-ULcd_1	1	Pantalla LCD 16x2
+M1 /	1 /	Motor de CC
 
-U3	1	Sensor de temperatura TMP36
+D2 /	1 /	Diodo (1N4007 o similar)
 
-Conexiones del Circuito
+ULcd_1 /	1 /	Pantalla LCD 16x2
 
-Sensor TMP36
+U3 /	1 /	Sensor de temperatura TMP36
 
-Pin	        Conexión
+*Conexiones del Circuito
 
-VCC	        5V
+**Sensor TMP36
 
-VOUT	      A0
+Pin	    /    Conexión
 
-GND	        GND
+VCC	    /    5V
+
+VOUT	  /    A0
+
+GND	    /    GND
 
 
-Pantalla LCD 16x2 (modo 4 bits)
+*Pantalla LCD 16x2 (modo 4 bits)
 
-Pin LCD	    Conexión Arduino
+Pin LCD	  /  Conexión Arduino
 
-RS	        12
+RS	  /      12
 
-E	          11
+E	    /      11
 
-D4	        5
+D4	   /     5
 
-D5        	4
+D5     /   	4
 
-D6	        3
+D6	    /    3
 
-D7	        2
+D7	   /     2
 
-VSS	        GND
+VSS	    /    GND
 
-VDD	        5V
+VDD	    /    5V
 
-VO	        Potenciómetro (ajuste de contraste)
+VO	     /   Potenciómetro (ajuste de contraste)
 
-RW	        GND
+RW	    /    GND
 
 LED de alerta
 
-Elemento	                        Conexión
+Elemento	              /          Conexión
 
-Ánodo (lado largo)	              Pin 8
+Ánodo (lado largo)	     /         Pin 8
 
-Cátodo	Resistencia de 220 Ω →    GND
+Cátodo	Resistencia de 220 Ω →  /  GND
 
 
-Motor DC + Diodo
-Elemento	Conexión
-Motor (+)	5V
-Motor (–)	Pin 10 (control)
+*Motor DC + Diodo
+
+Elemento	/ Conexión
+
+Motor (+)	 / 5V
+
+Motor (–) / Pin 10 (control)
+
 Diodo	En paralelo con el motor (ánodo al pin 10, cátodo al +5V)
 
-El sistema lee la temperatura desde el sensor TMP36, la convierte a grados Celsius y la muestra en el LCD.
+*El sistema lee la temperatura desde el sensor TMP36, la convierte a grados Celsius y la muestra en el LCD.
 Cuando la temperatura excede los 26 °C, el motor DC se activa simulando la ventilación, y se enciende el LED rojo como señal de advertencia.
 
-Temperatura (°C)	Estado	Acción
-≤ 25 °C	Normal	Motor apagado, LED apagado
-≥ 26 °C	Alta	Motor encendido, LED encendido
+Temperatura (°C) /	Estado /	Acción
+
+≤ 25 °C	/ Normal /	Motor apagado, LED apagado
+
+≥ 26 °C	/ Alta /	Motor encendido, LED encendido
